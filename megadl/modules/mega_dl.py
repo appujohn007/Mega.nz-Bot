@@ -102,15 +102,13 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
     # Send file(s) to the user
     await resp.edit("`Trying to upload now 📤...`")
-    retrieved = await MegaTools.get_info(url)
-    for file_path in f_list:
-        file_name = file_path.split('/')[-1]  
+    retrieved = await MegaTools.get_info(url) 
     await client.send_files(
         f_list,
         qcid,
         resp.id,
         reply_to_message_id=_mid,
-        caption=f"**Join @NexaBotsUpdates ❤️**\n\n {file_name}",
+        caption=f"**Join @NexaBotsUpdates ❤️**",
     )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
