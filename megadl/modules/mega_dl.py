@@ -72,16 +72,19 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
     if not path.isdir(dlid):
         makedirs(dlid)
 
-    # Edit message to indicate download is starting
-    await query.edit_message_text("`Your download is starting 📥...`", reply_markup=None)
-
     # Download the file/folder
+    resp = await query.edit_message_text(
+        "`Your download is starting 📥...`", reply_markup=None
+    )
+
     cli = MegaTools(client, conf)
+
+    f_list = None
     f_list = await cli.download(
         url,
         qusr,
         qcid,
-        query.message.id,
+        resp.id,
         path=dlid,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -89,28 +92,25 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
             ]
         ),
     )
-
-    # Handle if download fails
+    print(f"flist = {f_list}")
     if not f_list:
         return
 
-    # Update message to indicate successful download
     await query.edit_message_text("`Successfully downloaded the content 🥳`")
-
-    # Send each file with its file name as caption
-    for file_path in f_list:
-        file_name = file_path.split('/')[-1]  # Extract file name from file path
-        await client.send_document(
-            qcid,
-            file_path,
-            caption=file_name,  # Use file name as caption
-            reply_to_message_id=_mid,
-        )
-
-    # Update download count
+    # update download count
     if client.database:
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
-
-    # Clean up
+    # Send file(s) to the user
+    await resp.edit("`Trying to upload now 📤...`")
+    retrieved = await MegaTools.get_info(url)
+    for file_path in f_list:
+        file_name = file_path.split('/')[-1]  
+    await client.send_files(
+        f_list,
+        qcid,
+        resp.id,
+        reply_to_message_id=_mid,
+        caption=f"**Join @NexaBotsUpdates ❤️**\n\n {file_name}",
+    )
     await client.full_cleanup(dlid, qusr)
-    await query.message.delete()
+    await resp.delete()
