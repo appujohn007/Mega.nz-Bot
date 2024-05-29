@@ -92,7 +92,6 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
             ]
         ),
     )
-    print(f"flist = {f_list}")
     if not f_list:
         return
 
@@ -102,7 +101,6 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
     # Send file(s) to the user
     await resp.edit("`Trying to upload now 📤...`")
-    retrieved = await MegaTools.get_info(url) 
     await client.send_files(
         f_list,
         qcid,
