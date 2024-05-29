@@ -109,7 +109,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         qcid,
         resp.id,
         reply_to_message_id=_mid,
-        caption=f"**Join @NexaBotsUpdates ❤️**",
+        caption=f"**Join @NexaBotsUpdates ❤️**\n\n{retrieved} ",
     )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
