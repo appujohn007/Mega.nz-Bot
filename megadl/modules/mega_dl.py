@@ -81,7 +81,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         url,
         qusr,
         qcid,
-        query.message.message_id,
+        query.message.id,
         path=dlid,
         reply_markup=InlineKeyboardMarkup(
             [
