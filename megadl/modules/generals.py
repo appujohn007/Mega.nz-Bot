@@ -18,12 +18,15 @@ async def start_msg(_: CypherClient, msg: Message):
 ╭────────────────────────────────────────────────── ────────────╮
 │Hi `{msg.from_user.first_name}` 👋, I'm A Advanced Mega Downloader Bot!   │
 │                                                                          │
-│I can help you download, upload files or folders from telegram To Mega 😱.│
-│Not sure what to do? Check /help for more info 😇                         │
-│                                                                          │
-│                                                                          │
-│**Made with ❤️ by @botio_devs**                                           │
-╰─────────────────────────────────────────────────────────── ───╯
+│-✘ I can help you download/upload files or folders To Mega 😱.           │
+│   Not sure what to do? Check /help for more info 😇                     │
+│                                                                         │
+│-✘ Send A Mega.nz Link To start Download. Support files/folders 🙂       │
+│-✘ Send A File To Upload Ot To Mega.nz 🤯                                │
+│                                                                         │
+│                                                                         │
+│**Made with ❣ by @botio_devs**                                           │
+╰────────────────────────────────────────────────────────── ───╯
     """,
         disable_web_page_preview=True,
     )
