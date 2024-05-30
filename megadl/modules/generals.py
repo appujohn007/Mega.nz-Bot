@@ -29,7 +29,7 @@ Send A File/ Document To Upload It To Mega.nz 🤯
 ```
 
                                                                          
-**Made with ❣ by @botio_devs**                                         
+**Made with ❤️ by @botio_devs**                                         
 
 
     """,
