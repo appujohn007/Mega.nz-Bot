@@ -100,7 +100,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         
         if not f_list:
             return
-        print(f"{f_list})
+        print(f"{f_list}")
         await query.edit_message_text("`Successfully downloaded the content 🥳`")
         
         # update download count
