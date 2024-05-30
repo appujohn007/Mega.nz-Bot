@@ -18,13 +18,16 @@ async def start_msg(_: CypherClient, msg: Message):
 **Hi `{msg.from_user.first_name}` 👋**,
 
 **I ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴅᴏᴡɴʟᴏᴀᴅ/ᴜᴘʟᴏᴀᴅ ғɪʟᴇs ᴏʀ ғᴏʟᴅᴇʀs Tᴏ Mᴇɢᴀ 😱**
-**Nᴏᴛ sᴜʀᴇ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ? Cʜᴇᴄᴋ /ʜᴇʟᴘ ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ 😌**
+**Nᴏᴛ sᴜʀᴇ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ? Cʜᴇᴄᴋ /help ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ 😌**
+
+
 
 ```How To Use Me!
 Send A Mega.nz Link To start Download. Support files/folders 🙂
 Send /login To Login
 Send A File/ Document To Upload It To Mega.nz 🤯
 ```
+
                                                                          
 **Made with ❣ by @botio_devs**                                         
 
