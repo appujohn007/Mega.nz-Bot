@@ -26,8 +26,8 @@ async def track_progress(
         estimated_total_time = human_time(estimated_total_time)
 
         progress = "[{0}{1}] \n**Process**: {2}%\n".format(
-            "█" * floor(percentage / 5),
-            "░" * (20 - floor(percentage / 5)),
+            "▰" * floor(percentage / 5),
+            "▱" * (20 - floor(percentage / 5)),
             round(percentage, 2),
         )
 
