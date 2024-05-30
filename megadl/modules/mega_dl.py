@@ -1,7 +1,4 @@
-# Copyright (c) 2023 Itz-fork
-# Author: https://github.com/Itz-fork
-# Project: https://github.com/Itz-fork/Mega.nz-Bot
-# Description: Handle mega.nz download function
+
 
 
 import re
@@ -29,12 +26,12 @@ async def dl_from(client: CypherClient, msg: Message):
     _usr = msg.from_user.id
     client.glob_tmp[_usr] = [msg.text, f"{client.dl_loc}/{_usr}"]
     await msg.reply(
-        "**Select what you want to do 🤗**",
+        "**Gᴏᴛᴄʜᴀ Yᴏᴜʀ Lɪɴᴋ🤓\nBᴏss Wʜᴀᴛ's ɴᴇxᴛ🫡**",
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Download 💾", callback_data=f"dwn_mg-{_mid}")],
-                [InlineKeyboardButton("Info ℹ️", callback_data=f"info_mg-{_mid}")],
-                [InlineKeyboardButton("Cancel ❌", callback_data=f"cancelqcb-{_usr}")],
+                [InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📥", callback_data=f"dwn_mg-{_mid}")],
+                [InlineKeyboardButton("Gᴇᴛ Iɴғᴏ 📄", callback_data=f"info_mg-{_mid}")],
+                [InlineKeyboardButton("ᑕᗩᑎᑕᗴᒪ ❌", callback_data=f"cancelqcb-{_usr}")],
             ]
         ),
     )
@@ -74,7 +71,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
 
     # Download the file/folder
     resp = await query.edit_message_text(
-        "`Your download is starting 📥...`", reply_markup=None
+        "`𝙲𝚘𝚖𝚖𝚎𝚗𝚌𝚒𝚗𝚐 𝚈𝚘𝚞𝚛 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 👾`", reply_markup=None
     )
 
     cli = MegaTools(client, conf)
@@ -88,7 +85,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         path=dlid,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Cancel ❌", callback_data=f"cancelqcb-{qusr}")],
+                [InlineKeyboardButton("ᑕᗩᑎᑕᗴᒪ ❌", callback_data=f"cancelqcb-{qusr}")],
             ]
         ),
     )
@@ -100,7 +97,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
     if client.database:
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
     # Send file(s) to the user
-    await resp.edit("`Trying to upload now 📤...`")
+    await resp.edit("`𝚃𝚛𝚢𝚒𝚗𝚐 𝚝𝚘 𝚞𝚙𝚕𝚘𝚊𝚍 𝚗𝚘𝚠 📤...`")
     for file_path in f_list:
         file_name = file_path.split('/')[-1]  # Extract file name from file path
     await client.send_files(
@@ -108,7 +105,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         qcid,
         resp.id,
         reply_to_message_id=_mid,
-        caption=f"**Join @NexaBotsUpdates ❤️**\n\n {file_name}",
+        caption=f"**[𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝘾𝙤𝙢𝙢𝙪𝙣𝙞𝙩𝙮](https://t.me/botio_devs)🥰**",
     )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
