@@ -102,7 +102,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
     # Send file(s) to the user
     await resp.edit("`Trying to upload now 📤...`")
     for file_path in f_list:
-    file_name = file_path.split('/')[-1]  # Extract file name from file path
+        file_name = file_path.split('/')[-1]  # Extract file name from file path
     await client.send_files(
         f_list,
         qcid,
