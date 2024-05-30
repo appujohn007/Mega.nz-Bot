@@ -15,14 +15,16 @@ from megadl import CypherClient
 async def start_msg(_: CypherClient, msg: Message):
     await msg.reply_text(
         f"""
-Hi `{msg.from_user.first_name}` 👋, I'm A Advanced Mega Downloader Bot!
+**Hi `{msg.from_user.first_name}` 👋**,
 
--✘ I can help you download/upload files or folders To Mega 😱.
-   Not sure what to do? Check /help for more info 😌
+**I ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴅᴏᴡɴʟᴏᴀᴅ/ᴜᴘʟᴏᴀᴅ ғɪʟᴇs ᴏʀ ғᴏʟᴅᴇʀs Tᴏ Mᴇɢᴀ 😱**
+**Nᴏᴛ sᴜʀᴇ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ? Cʜᴇᴄᴋ /ʜᴇʟᴘ ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ 😌**
 
--✘ send A Mega.nz Link To start Download. Support files/folders 🙂
--✘ Send A File To Upload Ot To Mega.nz 🤯
-
+```How To Use Me!
+Send A Mega.nz Link To start Download. Support files/folders 🙂
+Send /login To Login
+Send A File/ Document To Upload It To Mega.nz 🤯
+```
                                                                          
 **Made with ❣ by @botio_devs**                                         
 
@@ -38,21 +40,22 @@ async def help_msg(_: CypherClient, msg: Message):
     await msg.reply_text(
         f"""
 **✘ How do I login?**
-  ⤷ Send /login command and enter your details when I ask you. Don't worry we encrypt your data before sending it anywhere 🤗
+  `⤷ Send /login command and enter your details when I ask you. Don't worry we encrypt your data before sending it anywhere 🤗`
+
 
 **✘ How to download from mega link?**
-  ⤷ It's very easy. Just send the link you want to download and I'll download it for you 😉.
-  ⤷ For private content you need to login first then send path to the file or folder you want to download starting with `/Root/<path-to-dl>`.
+ ` ⤷ It's very easy. Just send the link you want to download and I'll download it for you 😉.`
+ ` ⤷ For private content you need to login first then send path to the file or folder you want to download starting with `/Root/<path-to-dl>`.`
 
 **✘ How to upload files to Mega.nz?**
-  ⤷ Just send me the files and I'll ask you whether you want to upload it or not. Same goes for direct download links 😎
+ ` ⤷ Just send me the files and I'll ask you whether you want to upload it or not. Same goes for direct download links 😎`
 
 **✘ How to setup proxy?**
-  ⤷ Send /proxy command alongside the proxy 📡 (Ex: `/proxy https://example.com:8080`)
-    Please note that the free proxies you see on internet are **not working**
+ ` ⤷ Send /proxy command alongside the proxy 📡 (Ex: `/proxy https://example.com:8080`)`
+   ` Please note that the free proxies you see on internet are **not working**`
   
 ** ✘ How to get my account details?**
-  ⤷ Send /acc command and I'll send you your account details 🫣
+ ` ⤷ Send /acc command and I'll send you your account details 🫣`
 
 
 **Made with ❤️ by @botio_devs**
