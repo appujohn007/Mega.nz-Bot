@@ -101,12 +101,14 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         await client.database.plus_fl_count(qusr, downloads=len(f_list))
     # Send file(s) to the user
     await resp.edit("`Trying to upload now 📤...`")
+    for file_path in f_list:
+    file_name = file_path.split('/')[-1]  # Extract file name from file path
     await client.send_files(
         f_list,
         qcid,
         resp.id,
         reply_to_message_id=_mid,
-        caption=f"**Join @NexaBotsUpdates ❤️**",
+        caption=f"**Join @NexaBotsUpdates ❤️**\n\n {file_name}",
     )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
