@@ -104,9 +104,6 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         await query.edit_message_text("`Successfully downloaded the content 🥳`")
         
         # update download count
-        if client.database:
-            await client.database.plus_fl_count(qusr, downloads=len(f_list))
-        
         # Send file(s) to the user
         await resp.edit("`𝚃𝚛𝚢𝚒𝚗𝚐 𝚝𝚘 𝚞𝚙𝚕𝚘𝚊𝚍 𝚗𝚘𝚠 📤...`")
         await client.send_files(
