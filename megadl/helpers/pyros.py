@@ -31,10 +31,10 @@ async def track_progress(
             round(percentage, 2),
         )
 
-        tmp = f"{progress}{human_bytes(current)} of {human_bytes(total)}\n**Speed:** {human_bytes(speed)}/s\n**ETA:** {estimated_total_time if estimated_total_time != '' else '0 s'}\n"
+        tmp = f"{progress}{human_bytes(current)} of {human_bytes(total)}\n\n**Speed:** {human_bytes(speed)}/s\n\n**ETA:** {estimated_total_time if estimated_total_time != '' else '0 s'}\n"
         try:
             await client.edit_message_text(
-                chat_id, msg_id, f"{tmp}\n\n**Powered by @NexaBotsUpdates**", **kwargs
+                chat_id, msg_id, f"{tmp}\n\n**Powered by @botio_devs**", **kwargs
             )
         except:
             pass
