@@ -26,7 +26,7 @@ async def dl_from(client: CypherClient, msg: Message):
     _usr = msg.from_user.id
     client.glob_tmp[_usr] = [msg.text, f"{client.dl_loc}/{_usr}"]
     await msg.reply(
-        "**Gᴏᴛᴄʜᴀ Yᴏᴜʀ Lɪɴᴋ🤓\nBᴏss Wʜᴀᴛ's ɴᴇxᴛ🫡**",
+        "**Gᴏᴛᴄʜᴀ Yᴏᴜʀ Lɪɴᴋ🤓  Bᴏss Wʜᴀᴛ's ɴᴇxᴛ🫡? **",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📥", callback_data=f"dwn_mg-{_mid}")],
@@ -85,7 +85,7 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
         path=dlid,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("ᑕᗩᑎᑕᗴᒪ ❌", callback_data=f"cancelqcb-{qusr}")],
+                [InlineKeyboardButton("cancel ❌", callback_data=f"cancelqcb-{qusr}")],
             ]
         ),
     )
