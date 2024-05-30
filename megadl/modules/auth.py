@@ -30,7 +30,7 @@ async def mega_logger(client: CypherClient, msg: Message):
     password = client.cipher.encrypt(password.text.encode())
 
     await client.database.mega_login(user_id, email, password)
-    await msg.reply("`Successfully logged in ✅`")
+    await msg.reply("`Successfully logged in ✅`\n\n **Aʟʟ ʏᴏᴜʀ Pᴇʀsᴏɴᴀʟ Iɴғᴏ's Aʀᴇ Bᴇɪɴɢ Sᴀғᴇ Kᴇᴇᴘᴇᴅ. 🔒  Iғ ʏᴏᴜ ᴅᴏɴ'ᴛ Tʀᴜsᴛ Us Sᴇɴᴅ /ʟᴏɢᴏᴜᴛ 🫴 **")
 
 
 @CypherClient.on_message(filters.command("logout"))
@@ -39,6 +39,6 @@ async def mega_logoutter(client: CypherClient, msg: Message):
     really = await client.ask(msg.chat.id, "Are you sure you want to logout? (y/n)")
     if really.text.lower() == "y":
         await client.database.mega_logout(msg.chat.id)
-        await msg.reply("`Successfully logged out ✅`")
+        await msg.reply("`Successfully logged out ✅`\n\n **%Nᴏᴡ Wᴇ Dᴏɴ'ᴛ Hᴀᴠᴇ Aɴʏᴛʜɪɴɢ ᴏғ ʏᴏᴜʀs ᴡɪᴛʜ ᴜs**")
     else:
         await msg.reply("`Logout cancelled ❌`")
