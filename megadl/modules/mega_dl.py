@@ -122,6 +122,5 @@ async def dl_from_cb(client: CypherClient, query: CallbackQuery):
     except Exception as e:
         print(f"An error occurred: {e}")
         await query.edit_message_text(f"An error occurred: {e}")
-    )
     await client.full_cleanup(dlid, qusr)
     await resp.delete()
