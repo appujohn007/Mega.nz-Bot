@@ -431,7 +431,7 @@ class FileAlreadyExists(Exception):
 class LoginError(Exception):
     def __init__(self) -> None:
         super().__init__(
-            "Unable to login to your mega.nz account. \n\nYou can open a new issue if the problem persists - https://github.com/Itz-fork/Mega.nz-Bot/issues"
+            "Unable to login to your mega.nz account. \n\nYou can contact my admin @Appuz_007 with a screenshot"
         )
 
 
