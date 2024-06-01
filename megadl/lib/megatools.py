@@ -357,7 +357,7 @@ class MegaTools:
 
 Please make sure that you've provided the correct username and password.
 
-You can open a new issue if the problem persists - https://github.com/Itz-fork/Mega.nz-Bot/issues
+If it persist contact admin @Appuz_007 with a screenshot ✌️
         """
 
     async def __checkErrors(self, out):
